@@ -1,5 +1,9 @@
 # site-generator
 
+# Protótipo
+
+https://www.figma.com/file/bwjr5ykA9NVdARahhEI5t8/Site-Generator?node-id=7%3A6243
+
 # Checklist
 
 - [x] Criar o repositório no GitHub com a estrutura do Gitflow, ou seja, branches main e develop.
