@@ -24,3 +24,13 @@ https://www.figma.com/file/bwjr5ykA9NVdARahhEI5t8/Site-Generator?node-id=7%3A624
 - [ ] Usar a diretiva ngIf
 - [ ] Formatar a apresentação de dados com Pipes.
 - [ ] Build e deploy da aplicação.
+
+## Scripts
+
+- `ng serve` - Roda o ambiente dev;
+- `ng generate component component-name` - Gera um novo componente, também pode ser utilizado `ng generate directive|pipe|service|class|guard|interface|enum|module`;
+- `ng build` - Roda o build do projeto, os artefatos pós build são enviados para `/dist`
+- `ng test` - Roda os testes unitários;
+- `ng e2e` - Roda os testes ponta a ponta;
+
+> Esse projeto foi gerado com [Angular CLI](https://github.com/angular/angular-cli) version 14.1.3.
