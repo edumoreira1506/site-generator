@@ -1,5 +1,4 @@
-import { Component, ElementRef, ViewChild } from '@angular/core';
-import * as Materialize from 'materialize-css';
+import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +6,5 @@ import * as Materialize from 'materialize-css';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  @ViewChild('mobile_sidebar') mobileSidebarElement?: ElementRef;
-
   title = 'site-generator';
-
-  ngAfterViewInit() {
-    Materialize.Sidenav.init(this.mobileSidebarElement?.nativeElement);
-  }
 }

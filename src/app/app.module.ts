@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { SitesListComponent } from './home/sites-list/sites-list.component';
 import { SiteItemComponent } from './home/site-item/site-item.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
-  declarations: [AppComponent, SitesListComponent, SiteItemComponent],
+  declarations: [AppComponent, SitesListComponent, SiteItemComponent, MenuComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
