@@ -8,7 +8,9 @@
 
         <ul class="right hide-on-med-and-down">
           <li *ngFor="let menuItem of this.items">
-            <a href="{{ menuItem.href }}">{{menuItem.label}}</a>
+            <a routerLink="{{ menuItem.href }}" routerLinkActive="active">{{
+              menuItem.label
+            }}</a>
           </li>
         </ul>
       </div>
@@ -16,7 +18,12 @@
 
     <ul class="sidenav black" id="mobile-sidebar" #mobile_sidebar>
       <li *ngFor="let menuItem of this.items">
-        <a href="{{ menuItem.href }}" class="white-text">{{menuItem.label}}</a>
+        <a
+          routerLink="{{ menuItem.href }}"
+          routerLinkActive="active"
+          class="white-text"
+          >{{ menuItem.label }}</a
+        >
       </li>
     </ul>
   </nav>
