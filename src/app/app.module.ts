@@ -8,9 +8,10 @@ import { SiteItemComponent } from './home/site-item/site-item.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { CreateSitePageComponent } from './create-site-page/create-site-page.component';
 
 @NgModule({
-  declarations: [AppComponent, SitesListComponent, SiteItemComponent, MenuComponent, FooterComponent, HomePageComponent],
+  declarations: [AppComponent, SitesListComponent, SiteItemComponent, MenuComponent, FooterComponent, HomePageComponent, CreateSitePageComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

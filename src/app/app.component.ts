@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RoutePaths } from './app-routing.module';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,11 @@ export class AppComponent {
   menuItems = [
     {
       label: 'Listar sites',
-      href: '/',
+      href: `/${RoutePaths.MAIN}`,
+    },
+    {
+      label: 'Criar novo site',
+      href: `/${RoutePaths.CREATE_PAGE}`,
     },
   ];
 }
