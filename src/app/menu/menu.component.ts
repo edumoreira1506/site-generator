@@ -9,7 +9,17 @@ import * as Materialize from 'materialize-css';
 export class MenuComponent implements OnInit {
   @ViewChild('mobile_sidebar') mobileSidebarElement?: ElementRef;
 
-  constructor() {}
+  items: { label: string; href: string }[];
+
+  constructor() {
+    this.items = [
+      {
+        label: 'Exemplo 1',
+        href: '/rota-1',
+      },
+    ];
+  }
+  
   ngOnInit(): void {}
 
   ngAfterViewInit() {
