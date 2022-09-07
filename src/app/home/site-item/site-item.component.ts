@@ -1,24 +1,32 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+export type SiteItem = {
+  title: string;
+  description: string;
+  colors: string[];
+};
 
 @Component({
   selector: 'app-site-item',
   templateUrl: './site-item.component.html',
-  styleUrls: ['./site-item.component.scss']
+  styleUrls: ['./site-item.component.scss'],
 })
 export class SiteItemComponent implements OnInit {
+  @Input() colors: SiteItem['colors'] = [];
+  @Input() title: SiteItem['title'] = '';
+  @Input() description: SiteItem['description'] = '';
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   onItemClick() {
-    alert('onItemClick!')
+    alert('onItemClick!');
   }
 
   onEditButtonClick(event: Event) {
-    event.stopPropagation()
+    event.stopPropagation();
 
-    alert('onEditButtonClick!')
+    alert('onEditButtonClick!');
   }
 }
