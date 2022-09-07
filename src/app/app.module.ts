@@ -7,9 +7,10 @@ import { SitesListComponent } from './home/sites-list/sites-list.component';
 import { SiteItemComponent } from './home/site-item/site-item.component';
 import { MenuComponent } from './menu/menu.component';
 import { FooterComponent } from './footer/footer.component';
+import { HomePageComponent } from './home-page/home-page.component';
 
 @NgModule({
-  declarations: [AppComponent, SitesListComponent, SiteItemComponent, MenuComponent, FooterComponent],
+  declarations: [AppComponent, SitesListComponent, SiteItemComponent, MenuComponent, FooterComponent, HomePageComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
