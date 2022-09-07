@@ -15,7 +15,14 @@
     <p class="site-item__description">{{ this.description }}</p>
   </div>
 
-  <button class="site-item__edit" (click)="this.onEditButtonClick($event)">
+  <button
+    class="site-item__icon site-item__icon--first"
+    (click)="this.onRemoveButtonClick($event)"
+  >
+    <i class="material-icons">delete</i>
+  </button>
+
+  <button class="site-item__icon" (click)="this.onEditButtonClick($event)">
     <i class="material-icons">edit</i>
   </button>
 </div>

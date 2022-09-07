@@ -50,11 +50,15 @@
     color: #6b6f80;
   }
 
-  &__edit {
+  &__icon {
     background: none;
     border: none;
     width: 18px;
     height: 18px;
     padding: 0;
+
+    &--first {
+      margin-right: 3px;
+    }
   }
 }

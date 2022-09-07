@@ -29,4 +29,10 @@ export class SiteItemComponent implements OnInit {
 
     alert('onEditButtonClick!');
   }
+
+  onRemoveButtonClick(event: Event) {
+    event.stopPropagation();
+
+    alert('onRemoveButtonClick!');
+  }
 }
