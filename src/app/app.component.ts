@@ -9,8 +9,8 @@ export class AppComponent {
   title = 'site-generator';
   menuItems = [
     {
-      label: 'Exemplo 1',
-      href: '/rota-1',
+      label: 'Listar sites',
+      href: '/',
     },
   ];
 }
