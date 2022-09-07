@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { SiteItem } from '../site-item/site-item.component';
 
 @Component({
@@ -8,6 +8,8 @@ import { SiteItem } from '../site-item/site-item.component';
 })
 export class SitesListComponent implements OnInit {
   @Input() sites: SiteItem[] = [];
+
+  @Output() removeItem = new EventEmitter();
 
   constructor() {}
 

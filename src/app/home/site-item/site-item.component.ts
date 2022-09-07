@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 export type SiteItem = {
   title: string;
@@ -15,6 +15,8 @@ export class SiteItemComponent implements OnInit {
   @Input() colors: SiteItem['colors'] = [];
   @Input() title: SiteItem['title'] = '';
   @Input() description: SiteItem['description'] = '';
+
+  @Output() remove = new EventEmitter();
 
   constructor() {}
 
@@ -33,6 +35,12 @@ export class SiteItemComponent implements OnInit {
   onRemoveButtonClick(event: Event) {
     event.stopPropagation();
 
-    alert('onRemoveButtonClick!');
+    const confirmRemove = window.confirm(
+      'Tem certeza que deseja excluir o site?'
+    );
+
+    if (confirmRemove) {
+      this.remove.emit();
+    }
   }
 }
