@@ -12,4 +12,13 @@ export class SiteItemComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onItemClick() {
+    alert('onItemClick!')
+  }
+
+  onEditButtonClick(event: Event) {
+    event.stopPropagation()
+
+    alert('onEditButtonClick!')
+  }
 }

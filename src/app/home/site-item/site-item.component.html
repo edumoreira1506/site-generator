@@ -1,4 +1,4 @@
-<div class="site-item">
+<div class="site-item"  (click)="this.onItemClick()">
   <div class="site-item__texts">
     <div class="site-item__header">
       <p class="site-item__title">Nome do site</p>
@@ -13,7 +13,7 @@
 
     <p class="site-item__description">Descrição do site aqui</p>
   </div>
-  <button class="site-item__edit-button">
+  <button class="site-item__edit-button" (click)="this.onEditButtonClick($event)">
     <figure class="site-item__edit-container">
       <img alt="" src="/assets/images/edit-icon.svg" />
     </figure>

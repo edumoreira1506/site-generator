@@ -3,12 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { SiteTitleComponent } from './home/site-title/site-title.component';
 import { SitesListComponent } from './home/sites-list/sites-list.component';
 import { SiteItemComponent } from './home/site-item/site-item.component';
+import { MenuComponent } from './menu/menu.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
-  declarations: [AppComponent, SiteTitleComponent, SitesListComponent, SiteItemComponent],
+  declarations: [AppComponent, SitesListComponent, SiteItemComponent, MenuComponent, FooterComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
