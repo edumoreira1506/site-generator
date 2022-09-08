@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
 import * as Materialize from 'materialize-css';
 
 @Component({
@@ -9,20 +9,18 @@ import * as Materialize from 'materialize-css';
 export class MenuComponent implements OnInit {
   @ViewChild('mobile_sidebar') mobileSidebarElement?: ElementRef;
 
-  items: { label: string; href: string }[];
+  @Input() items: MenuItem[] = [];
 
-  constructor() {
-    this.items = [
-      {
-        label: 'Exemplo 1',
-        href: '/rota-1',
-      },
-    ];
-  }
-  
+  constructor() {}
+
   ngOnInit(): void {}
 
   ngAfterViewInit() {
     Materialize.Sidenav.init(this.mobileSidebarElement?.nativeElement);
   }
 }
+
+type MenuItem = {
+  label: string;
+  href: string;
+};

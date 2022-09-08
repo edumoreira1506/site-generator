@@ -1,9 +1,9 @@
 <header>
-  <app-menu></app-menu>
+  <app-menu [items]="this.menuItems"></app-menu>
 </header>
 
 <main class="app">
-  <app-sites-list></app-sites-list>
+  <router-outlet></router-outlet>
 </main>
 
 <footer class="page-footer footer black center-align">

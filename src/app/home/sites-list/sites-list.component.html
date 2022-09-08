@@ -1,13 +1,11 @@
 <ul class="sites-list">
-  <li class="sites-list__item">
-    <app-site-item></app-site-item>
-  </li>
-
-  <li class="sites-list__item">
-    <app-site-item></app-site-item>
-  </li>
-
-  <li class="sites-list__item">
-    <app-site-item></app-site-item>
+  <li *ngFor="let site of this.sites" class="sites-list__item">
+    <app-site-item
+      [colors]="site.colors"
+      [title]="site.title"
+      [id]="site.id"
+      [description]="site.description"
+      (remove)="this.removeItem.emit()"
+    ></app-site-item>
   </li>
 </ul>
