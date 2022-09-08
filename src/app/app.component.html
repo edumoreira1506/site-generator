@@ -1,5 +1,11 @@
-<div class="app">
-  <app-site-title></app-site-title>
+<header>
+  <app-menu [items]="this.menuItems"></app-menu>
+</header>
 
-  <app-sites-list></app-sites-list>
-</div>
+<main class="app">
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="page-footer footer black center-align">
+  <app-footer></app-footer>
+</footer>

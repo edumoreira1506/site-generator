@@ -1,0 +1,11 @@
+<app-sites-list
+  [sites]="this.sites"
+  (removeItem)="this.removeSite()"
+></app-sites-list>
+
+<a
+  class="waves-effect waves-light btn blue home-page__create-button"
+  routerLink="{{ this.createSiteRoute }}"
+  routerLinkActive="active"
+  >Criar novo site</a
+>

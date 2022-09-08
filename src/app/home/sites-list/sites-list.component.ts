@@ -1,15 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { SiteItem } from '../site-item/site-item.component';
 
 @Component({
   selector: 'app-sites-list',
   templateUrl: './sites-list.component.html',
-  styleUrls: ['./sites-list.component.scss']
+  styleUrls: ['./sites-list.component.scss'],
 })
 export class SitesListComponent implements OnInit {
+  @Input() sites: SiteItem[] = [];
 
-  constructor() { }
+  @Output() removeItem = new EventEmitter();
 
-  ngOnInit(): void {
-  }
+  constructor() {}
 
+  ngOnInit(): void {}
 }

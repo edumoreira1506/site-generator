@@ -1,21 +1,28 @@
-<div class="site-item">
+<div class="site-item" [routerLink]="['/sites', this.id]">
   <div class="site-item__texts">
     <div class="site-item__header">
-      <p class="site-item__title">Nome do site</p>
+      <p class="site-item__title">{{ this.title }}</p>
 
       <div class="site-item__colors">
-        <span class="site-item__color"></span>
-        <span class="site-item__color"></span>
-        <span class="site-item__color"></span>
-        <span class="site-item__color"></span>
+        <span
+          *ngFor="let color of this.colors"
+          class="site-item__color"
+          [style.backgroundColor]="color"
+        ></span>
       </div>
     </div>
 
-    <p class="site-item__description">Descrição do site aqui</p>
+    <p class="site-item__description">{{ this.description }}</p>
   </div>
-  <button class="site-item__edit-button">
-    <figure class="site-item__edit-container">
-      <img alt="" src="/assets/images/edit-icon.svg" />
-    </figure>
+
+  <button
+    class="site-item__icon site-item__icon--first"
+    (click)="this.onRemoveButtonClick($event)"
+  >
+    <i class="material-icons">delete</i>
+  </button>
+
+  <button class="site-item__icon" (click)="this.onEditButtonClick($event)">
+    <i class="material-icons">edit</i>
   </button>
 </div>

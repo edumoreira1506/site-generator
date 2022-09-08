@@ -1,0 +1,30 @@
+<div class="navbar-fixed">
+  <nav>
+    <div class="nav-wrapper black">
+      <div class="container">
+        <a href="#" data-target="mobile-sidebar" class="sidenav-trigger">
+          <i class="material-icons">menu</i>
+        </a>
+
+        <ul class="right hide-on-med-and-down">
+          <li *ngFor="let menuItem of this.items">
+            <a routerLink="{{ menuItem.href }}" routerLinkActive="active">{{
+              menuItem.label
+            }}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <ul class="sidenav black" id="mobile-sidebar" #mobile_sidebar>
+      <li *ngFor="let menuItem of this.items">
+        <a
+          routerLink="{{ menuItem.href }}"
+          routerLinkActive="active"
+          class="white-text"
+          >{{ menuItem.label }}</a
+        >
+      </li>
+    </ul>
+  </nav>
+</div>
