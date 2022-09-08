@@ -14,15 +14,18 @@ export class HomePageComponent implements OnInit {
       title: 'Site 1',
       description: 'Descrição do site aqui',
       colors: ['black', 'yellow', 'orange', 'red'],
+      id: '1',
     },
     {
       title: 'Site 2',
       description: 'Descrição do site aqui',
+      id: '2',
       colors: ['black', 'yellow', 'orange', 'red'],
     },
     {
       title: 'Site 3',
       description: 'Descrição do site aqui',
+      id: '3',
       colors: ['black', 'yellow', 'orange', 'red'],
     },
   ];

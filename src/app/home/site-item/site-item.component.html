@@ -1,4 +1,4 @@
-<div class="site-item" (click)="this.onItemClick()">
+<div class="site-item" [routerLink]="['/sites', this.id]">
   <div class="site-item__texts">
     <div class="site-item__header">
       <p class="site-item__title">{{ this.title }}</p>

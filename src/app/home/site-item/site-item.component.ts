@@ -4,6 +4,7 @@ export type SiteItem = {
   title: string;
   description: string;
   colors: string[];
+  id: string;
 };
 
 @Component({
@@ -15,16 +16,13 @@ export class SiteItemComponent implements OnInit {
   @Input() colors: SiteItem['colors'] = [];
   @Input() title: SiteItem['title'] = '';
   @Input() description: SiteItem['description'] = '';
+  @Input() id: SiteItem['id'] = '';
 
   @Output() remove = new EventEmitter();
 
   constructor() {}
 
   ngOnInit(): void {}
-
-  onItemClick() {
-    alert('onItemClick!');
-  }
 
   onEditButtonClick(event: Event) {
     event.stopPropagation();
