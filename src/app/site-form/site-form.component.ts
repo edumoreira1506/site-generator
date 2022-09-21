@@ -22,7 +22,7 @@ export class SiteFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.site = new Site('', '');
+    this.site = new Site('', '', '');
   }
 
   onSubmit() {

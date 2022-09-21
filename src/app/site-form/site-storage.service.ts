@@ -19,4 +19,9 @@ export class SiteStorageService {
 
     WebStorageUtil.set(Constants.SITES_KEY, this.sites);
   }
+
+  getSites() {
+    this.sites = WebStorageUtil.get(Constants.SITES_KEY) ?? [];
+    return this.sites;
+  }
 }

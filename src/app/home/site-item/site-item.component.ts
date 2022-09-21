@@ -1,11 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-
-export type SiteItem = {
-  title: string;
-  description: string;
-  colors: string[];
-  id: string;
-};
+import { Site } from 'src/app/model';
 
 @Component({
   selector: 'app-site-item',
@@ -13,10 +7,10 @@ export type SiteItem = {
   styleUrls: ['./site-item.component.scss'],
 })
 export class SiteItemComponent implements OnInit {
-  @Input() colors: SiteItem['colors'] = [];
-  @Input() title: SiteItem['title'] = '';
-  @Input() description: SiteItem['description'] = '';
-  @Input() id: SiteItem['id'] = '';
+  @Input() colors: Site['colors'] = [];
+  @Input() title: Site['title'] = '';
+  @Input() description: Site['description'] = '';
+  @Input() id: Site['id'] = '';
 
   @Output() remove = new EventEmitter();
 

@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { SiteItem } from '../site-item/site-item.component';
+import { Site } from 'src/app/model';
 
 @Component({
   selector: 'app-sites-list',
@@ -7,7 +7,7 @@ import { SiteItem } from '../site-item/site-item.component';
   styleUrls: ['./sites-list.component.scss'],
 })
 export class SitesListComponent implements OnInit {
-  @Input() sites: SiteItem[] = [];
+  @Input() sites: Site[] = [];
 
   @Output() removeItem = new EventEmitter();
 
