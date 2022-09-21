@@ -1,8 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
+import { Router } from '@angular/router';
 import { RoutePaths } from '../app-routing.module';
 import { Site } from '../model';
+import generateFakeId from '../util/generate-fake-id';
 import { SiteStorageService } from './site-storage.service';
 
 @Component({
@@ -22,7 +23,7 @@ export class SiteFormComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.site = new Site('', '', '');
+    this.site = new Site('', '', generateFakeId());
   }
 
   onSubmit() {
