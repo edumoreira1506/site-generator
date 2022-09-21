@@ -37,5 +37,10 @@
     font-size: 16px;
     line-height: 24px;
     height: 56px;
+    border: none;
+
+    &:disabled {
+      background-color: gray;
+    }
   }
 }
