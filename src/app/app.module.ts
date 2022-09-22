@@ -12,6 +12,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { CreateSitePageComponent } from './create-site-page/create-site-page.component';
 import { SitePageComponent } from './site-page/site-page.component';
 import { SiteFormComponent } from './site-form/site-form.component';
+import { EditSitePageComponent } from './edit-site-page/edit-site-page.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { SiteFormComponent } from './site-form/site-form.component';
     CreateSitePageComponent,
     SitePageComponent,
     SiteFormComponent,
+    EditSitePageComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

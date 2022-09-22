@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnInit, ViewChild } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { RoutePaths } from '../app-routing.module';
@@ -15,6 +15,8 @@ import { SiteStorageService } from './site-storage.service';
 export class SiteFormComponent implements OnInit {
   @ViewChild('form') form!: NgForm;
 
+  @Input() siteId: Site['id'] = '';
+
   site!: Site;
 
   constructor(
@@ -24,10 +26,22 @@ export class SiteFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.site = new Site('', '', generateFakeId());
+
+    if (this.siteId) {
+      const site = this.siteService.findById(this.siteId);
+
+      if (site) {
+        this.site = site;
+      }
+    }
   }
 
   onSubmit() {
-    this.siteService.save(this.site);
+    if (this.site.id) {
+      this.siteService.update(this.site);
+    } else {
+      this.siteService.save(this.site);
+    }
     this.form.reset();
     this.router.navigate([`/${RoutePaths.MAIN}`]);
   }

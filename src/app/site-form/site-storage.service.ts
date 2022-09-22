@@ -14,7 +14,8 @@ export class SiteStorageService {
   }
 
   save(site: Site) {
-    this.sites = WebStorageUtil.get(Constants.SITES_KEY) ?? [];
+    this.getSites();
+
     this.sites.push(site);
 
     WebStorageUtil.set(Constants.SITES_KEY, this.sites);
@@ -22,11 +23,13 @@ export class SiteStorageService {
 
   getSites() {
     this.sites = WebStorageUtil.get(Constants.SITES_KEY) ?? [];
+
     return this.sites;
   }
 
   delete(siteId: string): boolean {
-    this.sites = WebStorageUtil.get(Constants.SITES_KEY) ?? [];
+    this.getSites();
+
     this.sites = this.sites.filter((s) => {
       return s.id !== siteId;
     });
@@ -34,5 +37,19 @@ export class SiteStorageService {
     WebStorageUtil.set(Constants.SITES_KEY, this.sites);
 
     return true;
+  }
+
+  findById(siteId: string) {
+    this.getSites();
+
+    const site = this.sites.find((s) => s.id === siteId);
+
+    return site;
+  }
+
+  update(site: Site) {
+    this.getSites();
+    this.delete(site.id);
+    this.save(site);
   }
 }

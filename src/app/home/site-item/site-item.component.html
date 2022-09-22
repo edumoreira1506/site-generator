@@ -23,7 +23,11 @@
       <i class="material-icons">delete</i>
     </button>
 
-    <button class="site-item__icon" (click)="this.onEditButtonClick($event)">
+    <button
+      [routerLink]="['/sites', this.id, 'editar']"
+      class="site-item__icon"
+      (click)="this.onEditButtonClick($event)"
+    >
       <i class="material-icons">edit</i>
     </button>
   </div>
