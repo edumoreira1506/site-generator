@@ -1,0 +1,48 @@
+<form #form="ngForm" (ngSubmit)="onSubmit()" class="site-form">
+  <div class="site-form__field">
+    <label for="site-title" class="site-form__label">Nome do site </label>
+
+    <input
+      type="text"
+      id="site-title"
+      name="site-title"
+      class="site-form__input"
+      [(ngModel)]="this.site.title"
+      required
+      #title="ngModel"
+      pattern="^(\s?[a-zà-ú]*)"
+    />
+
+    <div
+      class="site-form__input-message"
+      [hidden]="title.valid || title.untouched"
+    >
+      Por favor, informe o nome do site
+    </div>
+  </div>
+
+  <div class="site-form__field">
+    <label for="site-title" class="site-form__label">Descrição do site </label>
+
+    <input
+      type="text"
+      id="site-description"
+      name="site-description"
+      class="site-form__input"
+      [(ngModel)]="this.site.description"
+      required
+      #description="ngModel"
+    />
+
+    <div
+      class="site-form__input-message"
+      [hidden]="description.valid || description.untouched"
+    >
+      Por favor, informe a descrição do site
+    </div>
+  </div>
+
+  <button class="site-form__save-button" type="submit" [disabled]="!form.valid">
+    Enviar
+  </button>
+</form>
