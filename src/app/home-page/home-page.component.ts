@@ -20,7 +20,8 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  removeSite() {
-    alert('removeSite!');
+  removeSite(siteId: string) {
+    this.siteService.delete(siteId);
+    this.sites = this.siteService.getSites();
   }
 }

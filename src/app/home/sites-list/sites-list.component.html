@@ -5,7 +5,7 @@
       [title]="site.title"
       [id]="site.id"
       [description]="site.description"
-      (remove)="this.removeItem.emit()"
+      (remove)="this.removeItem.emit(site.id)"
     ></app-site-item>
   </li>
 </ul>

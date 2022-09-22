@@ -24,4 +24,15 @@ export class SiteStorageService {
     this.sites = WebStorageUtil.get(Constants.SITES_KEY) ?? [];
     return this.sites;
   }
+
+  delete(siteId: string): boolean {
+    this.sites = WebStorageUtil.get(Constants.SITES_KEY) ?? [];
+    this.sites = this.sites.filter((s) => {
+      return s.id !== siteId;
+    });
+
+    WebStorageUtil.set(Constants.SITES_KEY, this.sites);
+
+    return true;
+  }
 }
