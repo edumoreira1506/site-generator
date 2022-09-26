@@ -42,6 +42,62 @@
     </div>
   </div>
 
+  <div class="site-form__field">
+    <p class="site-form__description">
+      Customize a paleta de cores do seu site
+    </p>
+
+    <div class="site-form__colors">
+      <div class="site-form__color-wrapper">
+        <input
+          type="text"
+          class="site-form__color-input"
+          [style.background]="this.site.colors.primary"
+          [(ngModel)]="this.site.colors.primary"
+          [(colorPicker)]="this.site.colors.primary"
+          required
+          name="site-colors-primary"
+        />
+      </div>
+
+      <div class="site-form__color-wrapper">
+        <input
+          type="text"
+          class="site-form__color-input"
+          [style.background]="this.site.colors.secondary"
+          [(ngModel)]="this.site.colors.secondary"
+          [(colorPicker)]="this.site.colors.secondary"
+          required
+          name="site-colors-secondary"
+        />
+      </div>
+
+      <div class="site-form__color-wrapper">
+        <input
+          type="text"
+          class="site-form__color-input"
+          [style.background]="this.site.colors.tertiary"
+          [(ngModel)]="this.site.colors.tertiary"
+          [(colorPicker)]="this.site.colors.tertiary"
+          required
+          name="site-colors-tertiary"
+        />
+      </div>
+
+      <div class="site-form__color-wrapper">
+        <input
+          type="text"
+          class="site-form__color-input"
+          [style.background]="this.site.colors.texts"
+          [(ngModel)]="this.site.colors.texts"
+          [(colorPicker)]="this.site.colors.texts"
+          required
+          name="site-colors-texts"
+        />
+      </div>
+    </div>
+  </div>
+
   <button class="site-form__save-button" type="submit" [disabled]="!form.valid">
     Enviar
   </button>
