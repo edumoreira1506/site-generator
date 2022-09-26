@@ -14,6 +14,7 @@ import { CreateSitePageComponent } from './create-site-page/create-site-page.com
 import { SitePageComponent } from './site-page/site-page.component';
 import { SiteFormComponent } from './site-form/site-form.component';
 import { EditSitePageComponent } from './edit-site-page/edit-site-page.component';
+import { SiteComponentComponent } from './site-component/site-component.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { EditSitePageComponent } from './edit-site-page/edit-site-page.component
     SitePageComponent,
     SiteFormComponent,
     EditSitePageComponent,
+    SiteComponentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ColorPickerModule],
   providers: [],

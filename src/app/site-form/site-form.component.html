@@ -98,6 +98,55 @@
     </div>
   </div>
 
+  <div class="site-form__field">
+    <p class="site-form__description">
+      Customize os componentes que os usuários irão visualizar
+    </p>
+
+    <ol class="site-form__components">
+      <li
+        class="site-form__component"
+        *ngFor="
+          let component of this.site.components;
+          index as indexOfComponent
+        "
+      >
+        <div class="site-form__component-header">
+          <i class="material-icons">edit</i>
+
+          <select
+            class="site-form__component-select"
+            [(ngModel)]="this.site.components[indexOfComponent].identifier"
+            required
+            name="site-component-{{ indexOfComponent }}"
+          >
+            <option
+              *ngFor="let componentType of this.siteComponentIdentifier"
+              value="{{ componentType }}"
+            >
+              {{ componentType }}
+            </option>
+          </select>
+        </div>
+
+        <div class="site-form__component-preview">
+          <app-site-component
+            [identifier]="component.identifier"
+            [metadata]="component.metadata"
+          ></app-site-component>
+        </div>
+      </li>
+    </ol>
+  </div>
+
+  <button
+    class="site-form__add-component"
+    type="button"
+    (click)="this.onAddComponent($event)"
+  >
+    Adicionar componente
+  </button>
+
   <button class="site-form__save-button" type="submit" [disabled]="!form.valid">
     Enviar
   </button>

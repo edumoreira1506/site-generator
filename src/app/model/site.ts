@@ -1,3 +1,24 @@
+export enum SiteComponentIdentifier {
+  Banner = 'BANNER',
+  Header = 'HEADER',
+}
+
+export const SiteComponentTemplates = {
+  [SiteComponentIdentifier.Banner]: {
+    title: '',
+    description: '',
+    backgoundImage: false,
+  },
+  [SiteComponentIdentifier.Header]: {
+    showTitle: false,
+  },
+};
+
+export type SiteComponent = {
+  identifier: SiteComponentIdentifier;
+  metadata: Record<string, boolean | number | string>;
+};
+
 type SiteColors = {
   primary: string;
   secondary: string;
@@ -10,6 +31,7 @@ export class Site {
   description: string;
   id: string;
   colors: SiteColors;
+  components: SiteComponent[];
 
   constructor(
     title: string,
@@ -20,11 +42,13 @@ export class Site {
       secondary: '#000000',
       tertiary: '#000000',
       texts: '#000000',
-    }
+    },
+    components: SiteComponent[] = []
   ) {
     this.title = title;
     this.description = description;
     this.id = id;
     this.colors = colors;
+    this.components = components;
   }
 }
