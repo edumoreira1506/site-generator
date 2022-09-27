@@ -60,22 +60,7 @@ export class SiteFormComponent implements OnInit {
 
     this.site.components.push({
       identifier: SiteComponentIdentifier.Banner,
-      metadata: SiteComponentTemplates[SiteComponentIdentifier.Banner],
-    });
-  }
-
-  onEditComponentType(event: Event, componentIndex: number) {
-    this.site.components = this.site.components.map((c, index) => {
-      if (index !== componentIndex) return c;
-
-      const componentIdentifier: SiteComponentIdentifier = (event as any).target
-        .value;
-
-      return {
-        ...c,
-        identifier: componentIdentifier,
-        metadata: SiteComponentTemplates[componentIdentifier],
-      };
+      metadata: { ...SiteComponentTemplates[SiteComponentIdentifier.Banner] },
     });
   }
 
