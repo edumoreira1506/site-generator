@@ -1,9 +1,22 @@
 <div class="site-component">
-  <div *ngIf="this.identifier === 'HEADER'">
-    <h1>header</h1>
+  <div
+    *ngIf="this.identifier === 'BANNER'"
+    class="site-component-banner"
+    [style.backgroundColor]="this.site.colors.secondary"
+    [style.color]="this.site.colors.tertiary"
+  >
+    <p class="site-component-banner__title">{{ this.metadata["title"] }}</p>
+    <p class="site-component-banner__description">
+      {{ this.metadata["description"] }}
+    </p>
   </div>
 
-  <div *ngIf="this.identifier === 'BANNER'">
-    <h1>banner</h1>
+  <div
+    *ngIf="this.identifier === 'HEADER'"
+    class="site-component-header"
+    [style.backgroundColor]="this.site.colors.primary"
+    [style.color]="this.site.colors.tertiary"
+  >
+    {{ this.site.title }}
   </div>
 </div>

@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { SiteComponent, SiteComponentIdentifier } from '../model';
+import { Site, SiteComponent, SiteComponentIdentifier } from '../model';
 
 @Component({
   selector: 'app-site-component',
@@ -10,6 +10,7 @@ export class SiteComponentComponent implements OnInit {
   @Input() identifier: SiteComponent['identifier'] =
     SiteComponentIdentifier.Banner;
   @Input() metadata: SiteComponent['metadata'] = {};
+  @Input() site: Site = new Site('', '', '');
 
   constructor() {}
 
