@@ -1,5 +1,6 @@
 .site-form {
   width: 100%;
+  margin-bottom: 70px;
 
   &__field {
     width: 100%;
@@ -47,5 +48,93 @@
   &__input-message {
     font-weight: 300;
     font-style: italic;
+  }
+
+  &__colors {
+    width: 100%;
+    display: flex;
+    gap: 12px;
+  }
+
+  &__color-wrapper {
+    width: 48px;
+    height: 48px;
+    background-color: #f6f7f9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__description {
+    margin-top: 12px;
+    color: #3e414c;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  &__color-input {
+    font-size: 0 !important;
+    width: 32px !important;
+    height: 32px !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border-radius: 4px !important;
+  }
+
+  &__add-component {
+    margin-bottom: 16px;
+    width: 100%;
+    text-align: center;
+    background-color: #1363df;
+    color: #ffffff;
+    font-weight: light;
+    border: none;
+    text-transform: uppercase;
+    padding: 5px 0;
+  }
+
+  &__components {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__component {
+    margin-bottom: 12px;
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background-color: #f6f7f9;
+      height: 48px;
+
+      i {
+        color: #141519;
+        width: 20px;
+        height: 20px;
+        margin-left: 12px;
+        cursor: pointer;
+      }
+    }
+
+    &-select {
+      width: calc(100% - 42px);
+      height: 100%;
+      display: block;
+      background-color: #f6f7f9;
+      border: none;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &-preview {
+      margin-top: 12px;
+    }
   }
 }

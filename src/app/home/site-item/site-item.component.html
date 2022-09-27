@@ -5,9 +5,23 @@
 
       <div class="site-item__colors">
         <span
-          *ngFor="let color of this.colors"
           class="site-item__color"
-          [style.backgroundColor]="color"
+          [style.backgroundColor]="this.colors.primary"
+        ></span>
+
+        <span
+          class="site-item__color"
+          [style.backgroundColor]="this.colors.secondary"
+        ></span>
+
+        <span
+          class="site-item__color"
+          [style.backgroundColor]="this.colors.tertiary"
+        ></span>
+
+        <span
+          class="site-item__color"
+          [style.backgroundColor]="this.colors.texts"
         ></span>
       </div>
     </div>
