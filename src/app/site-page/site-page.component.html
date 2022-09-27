@@ -1,1 +1,14 @@
-<p>SiteID: {{this.siteId}}</p>
+<div *ngIf="this.site" class="site-page">
+  <ol class="site-page__components">
+    <li
+      *ngFor="let component of this.site.components"
+      class="site-page__component"
+    >
+      <app-site-component
+        [identifier]="component.identifier"
+        [metadata]="component.metadata"
+        [site]="this.site"
+      ></app-site-component>
+    </li>
+  </ol>
+</div>

@@ -1,0 +1,66 @@
+<div class="edit-component-modal">
+  <p class="edit-component-modal__title">Editar {{ this.identifier }}</p>
+  <p class="edit-component-modal__description">
+    Customize as opções do componente
+  </p>
+
+  <form
+    (ngSubmit)="this.close.emit(this.metadata)"
+    #form="ngForm"
+    class="edit-component-modal__form"
+  >
+    <span *ngIf="this.identifier === 'BANNER'">
+      <div class="edit-component-modal__field">
+        <label for="component-banner-title" class="edit-component-modal__label"
+          >Título do banner</label
+        >
+
+        <input
+          type="text"
+          id="component-banner-title"
+          name="component-banner-title"
+          class="edit-component-modal__input"
+          [(ngModel)]="this.metadata['title']"
+          required
+          #bannerTitle="ngModel"
+        />
+
+        <div
+          class="edit-component-modal__input-message"
+          [hidden]="bannerTitle.valid || bannerTitle.untouched"
+        >
+          Por favor, informe o título do banner
+        </div>
+      </div>
+
+      <div class="edit-component-modal__field">
+        <label
+          for="component-banner-description"
+          class="edit-component-modal__label"
+          >Descrição do banner</label
+        >
+
+        <input
+          type="text"
+          id="component-banner-description"
+          name="component-banner-description"
+          class="edit-component-modal__input"
+          [(ngModel)]="this.metadata['description']"
+          required
+          #bannerDescription="ngModel"
+        />
+
+        <div
+          class="edit-component-modal__input-message"
+          [hidden]="bannerDescription.valid || bannerDescription.untouched"
+        >
+          Por favor, informe a descrição do banner
+        </div>
+      </div>
+    </span>
+
+    <button class="edit-component-modal__save-button" type="submit">
+      Salvar
+    </button>
+  </form>
+</div>
