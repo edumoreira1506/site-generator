@@ -59,7 +59,11 @@
       </div>
     </span>
 
-    <button class="edit-component-modal__save-button" type="submit">
+    <button
+      [disabled]="!form.valid"
+      class="edit-component-modal__save-button"
+      type="submit"
+    >
       Salvar
     </button>
   </form>
