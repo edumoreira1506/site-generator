@@ -4,6 +4,7 @@ import { Router } from '@angular/router';
 import { RoutePaths } from '../app-routing.module';
 import {
   Site,
+  SiteComponent,
   SiteComponentIdentifier,
   SiteComponentTemplates,
 } from '../model';
@@ -24,6 +25,8 @@ export class SiteFormComponent implements OnInit {
   site!: Site;
 
   siteComponentIdentifier = Object.values(SiteComponentIdentifier);
+
+  selectedComponentIndex?: number;
 
   constructor(
     private siteService: SiteStorageService,
@@ -74,5 +77,24 @@ export class SiteFormComponent implements OnInit {
         metadata: SiteComponentTemplates[componentIdentifier],
       };
     });
+  }
+
+  onEditComponent(componentIndex: number) {
+    this.selectedComponentIndex = componentIndex;
+  }
+
+  onFinishEditComponent(
+    componentIndex: number,
+    newComponentMetadata: SiteComponent['metadata']
+  ) {
+    this.site.components = this.site.components.map((c, index) => {
+      if (index !== componentIndex) return c;
+
+      return {
+        ...c,
+        metadata: newComponentMetadata,
+      };
+    });
+    this.selectedComponentIndex = undefined;
   }
 }

@@ -7,11 +7,8 @@ export const SiteComponentTemplates = {
   [SiteComponentIdentifier.Banner]: {
     title: '',
     description: '',
-    backgoundImage: false,
   },
-  [SiteComponentIdentifier.Header]: {
-    showTitle: false,
-  },
+  [SiteComponentIdentifier.Header]: {},
 };
 
 export type SiteComponent = {

@@ -112,7 +112,11 @@
         "
       >
         <div class="site-form__component-header">
-          <i class="material-icons">edit</i>
+          <i
+            class="material-icons"
+            (click)="this.onEditComponent(indexOfComponent)"
+            >edit</i
+          >
 
           <select
             class="site-form__component-select"
@@ -151,3 +155,11 @@
     Enviar
   </button>
 </form>
+
+<span *ngIf="this.selectedComponentIndex !== undefined">
+  <app-edit-component-modal
+    (close)="this.onFinishEditComponent(this.selectedComponentIndex, $event)"
+    [identifier]="this.site.components[this.selectedComponentIndex].identifier"
+    [metadata]="this.site.components[this.selectedComponentIndex].metadata"
+  ></app-edit-component-modal>
+</span>

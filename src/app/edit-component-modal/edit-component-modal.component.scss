@@ -1,0 +1,80 @@
+.edit-component-modal {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+  padding: 0 8px;
+  padding-top: 30px;
+
+  &__title {
+    margin: 0;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: #141519;
+  }
+
+  &__description {
+    margin-top: 12px;
+    color: #3e414c;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  &__form {
+    width: 100%;
+    margin-bottom: 70px;
+  }
+
+  &__input-message {
+    font-weight: 300;
+    font-style: italic;
+  }
+
+  &__field {
+    width: 100%;
+    font-weight: 600;
+    margin-bottom: 32px;
+  }
+
+  &__label {
+    font-size: 16px;
+    line-height: 24px;
+    color: #141519;
+  }
+
+  &__input {
+    margin-top: 4px !important;
+    background-color: #f6f7f9 !important;
+    border-radius: 4px !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 16px !important;
+    width: calc(100% - 32px) !important;
+    color: #141519;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__save-button {
+    background: #1363df;
+    border-radius: 56px;
+    width: 100%;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    height: 56px;
+    border: none;
+
+    &:disabled {
+      background-color: gray;
+    }
+  }
+}

@@ -15,6 +15,7 @@ import { SitePageComponent } from './site-page/site-page.component';
 import { SiteFormComponent } from './site-form/site-form.component';
 import { EditSitePageComponent } from './edit-site-page/edit-site-page.component';
 import { SiteComponentComponent } from './site-component/site-component.component';
+import { EditComponentModalComponent } from './edit-component-modal/edit-component-modal.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { SiteComponentComponent } from './site-component/site-component.componen
     SiteFormComponent,
     EditSitePageComponent,
     SiteComponentComponent,
+    EditComponentModalComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, ColorPickerModule],
   providers: [],
