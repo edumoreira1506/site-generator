@@ -60,7 +60,7 @@ export class SiteFormComponent implements OnInit {
 
     this.site.components.push({
       identifier: SiteComponentIdentifier.Banner,
-      metadata: SiteComponentTemplates[SiteComponentIdentifier.Banner],
+      metadata: { ...SiteComponentTemplates[SiteComponentIdentifier.Banner] },
     });
   }
 
