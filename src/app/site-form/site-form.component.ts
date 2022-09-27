@@ -64,21 +64,6 @@ export class SiteFormComponent implements OnInit {
     });
   }
 
-  onEditComponentType(event: Event, componentIndex: number) {
-    this.site.components = this.site.components.map((c, index) => {
-      if (index !== componentIndex) return c;
-
-      const componentIdentifier: SiteComponentIdentifier = (event as any).target
-        .value;
-
-      return {
-        ...c,
-        identifier: componentIdentifier,
-        metadata: SiteComponentTemplates[componentIdentifier],
-      };
-    });
-  }
-
   onEditComponent(componentIndex: number) {
     this.selectedComponentIndex = componentIndex;
   }
