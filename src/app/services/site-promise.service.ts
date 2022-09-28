@@ -1,6 +1,7 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 
 import { Injectable } from '@angular/core';
+import { lastValueFrom } from 'rxjs';
 import { Site } from '../model/site';
 
 @Injectable({
@@ -16,42 +17,46 @@ export class SitePromiseService {
   constructor(private httpClient: HttpClient) {}
 
   getAll() {
-    return this.httpClient.get<Site[]>(this.URL).toPromise();
+    return lastValueFrom(this.httpClient.get<Site[]>(this.URL));
   }
 
   getById(siteId: string) {
-    return this.httpClient.get<Site>(`${this.URL}/${siteId}`).toPromise();
+    return lastValueFrom(this.httpClient.get<Site>(`${this.URL}/${siteId}`));
   }
 
   save(site: Site) {
-    return this.httpClient
-      .post<Site>(this.URL, JSON.stringify(site), this.httpOptions)
-      .toPromise();
+    return lastValueFrom(
+      this.httpClient.post<Site>(
+        this.URL,
+        JSON.stringify(site),
+        this.httpOptions
+      )
+    );
   }
 
   patch(site: Site) {
-    return this.httpClient
-      .patch<Site>(
+    return lastValueFrom(
+      this.httpClient.patch<Site>(
         `${this.URL}/${site.id}`,
         JSON.stringify(site),
         this.httpOptions
       )
-      .toPromise();
+    );
   }
 
   update(site: Site) {
-    return this.httpClient
-      .put<Site>(
+    return lastValueFrom(
+      this.httpClient.put<Site>(
         `${this.URL}/${site.id}`,
         JSON.stringify(site),
         this.httpOptions
       )
-      .toPromise();
+    );
   }
 
   remove(siteId: string) {
-    return this.httpClient
-      .delete<Site>(`${this.URL}/${siteId}`, this.httpOptions)
-      .toPromise();
+    return lastValueFrom(
+      this.httpClient.delete<Site>(`${this.URL}/${siteId}`, this.httpOptions)
+    );
   }
 }
