@@ -16,6 +16,7 @@ import { SiteFormComponent } from './site-form/site-form.component';
 import { EditSitePageComponent } from './edit-site-page/edit-site-page.component';
 import { SiteComponentComponent } from './site-component/site-component.component';
 import { EditComponentModalComponent } from './edit-component-modal/edit-component-modal.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,13 @@ import { EditComponentModalComponent } from './edit-component-modal/edit-compone
     SiteComponentComponent,
     EditComponentModalComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule, ColorPickerModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    ColorPickerModule,
+    HttpClientModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
