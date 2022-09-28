@@ -1,0 +1,4 @@
+{
+  "/sites": "/sites",
+  "/sites/:id": "/sites/:id"
+}
