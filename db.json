@@ -1,25 +1,3 @@
 {
-  "sites": [
-    {
-      "title": "dsasda",
-      "description": "dsaadsad",
-      "id": "1",
-      "colors": {
-        "primary": "#c89898",
-        "secondary": "#914040",
-        "tertiary": "#53833b",
-        "texts": "#000000"
-      },
-      "components": [
-        {
-          "identifier": "BANNER",
-          "metadata": { "title": "dsa", "description": "dsadada" }
-        },
-        {
-          "identifier": "HEADER",
-          "metadata": { "title": "dsa", "description": "dsadada" }
-        }
-      ]
-    }
-  ]
+  "sites": []
 }

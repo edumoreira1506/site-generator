@@ -8,14 +8,13 @@ import {
   SiteComponentIdentifier,
   SiteComponentTemplates,
 } from '../model';
-import generateFakeId from '../util/generate-fake-id';
-import { SiteStorageService } from './site-storage.service';
+import { SitePromiseService } from '../services/site-promise.service';
 
 @Component({
   selector: 'app-site-form',
   templateUrl: './site-form.component.html',
   styleUrls: ['./site-form.component.scss'],
-  providers: [SiteStorageService],
+  providers: [SitePromiseService],
 })
 export class SiteFormComponent implements OnInit {
   @ViewChild('form') form!: NgForm;
@@ -29,30 +28,34 @@ export class SiteFormComponent implements OnInit {
   selectedComponentIndex?: number;
 
   constructor(
-    private siteService: SiteStorageService,
+    private siteService: SitePromiseService,
     private router: Router
   ) {}
 
   ngOnInit(): void {
-    this.site = new Site('', '', generateFakeId());
+    this.site = new Site('', '', '');
 
     if (this.siteId) {
-      const site = this.siteService.findById(this.siteId);
-
-      if (site) {
-        this.site = site;
-      }
+      this.siteService.getById(this.siteId).then((site) => {
+        if (site) {
+          this.site = site;
+        }
+      });
     }
   }
 
   onSubmit() {
     if (this.site.id) {
-      this.siteService.update(this.site);
+      this.siteService.update(this.site).then(() => {
+        this.form.reset();
+        this.router.navigate([`/${RoutePaths.MAIN}`]);
+      });
     } else {
-      this.siteService.save(this.site);
+      this.siteService.save(this.site).then(() => {
+        this.form.reset();
+        this.router.navigate([`/${RoutePaths.MAIN}`]);
+      });
     }
-    this.form.reset();
-    this.router.navigate([`/${RoutePaths.MAIN}`]);
   }
 
   onAddComponent(event: Event) {
