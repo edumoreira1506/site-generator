@@ -41,13 +41,18 @@
     }
   }
 
-  &__description {
+  &__description,
+  &__last-update {
     width: 100%;
     margin: 0;
     font-weight: 400;
     font-size: 14px;
     line-height: 20px;
     color: #6b6f80;
+  }
+
+  &__last-update {
+    font-size: 10px;
   }
 
   &__icon {

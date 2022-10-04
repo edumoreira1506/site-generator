@@ -16,6 +16,7 @@ export class SiteItemComponent implements OnInit {
   @Input() title: Site['title'] = '';
   @Input() description: Site['description'] = '';
   @Input() id: Site['id'] = '';
+  @Input() updatedAt: Site['updatedAt'] = new Date();
 
   @Output() remove = new EventEmitter();
 
