@@ -116,13 +116,16 @@
         color: #141519;
         width: 20px;
         height: 20px;
-        margin-left: 12px;
         cursor: pointer;
+
+        &:first-child {
+          margin-left: 12px;
+        }
       }
     }
 
     &-select {
-      width: calc(100% - 42px);
+      width: calc(100% - 62px);
       height: 100%;
       display: block;
       background-color: #f6f7f9;
@@ -135,6 +138,12 @@
 
     &-preview {
       margin-top: 12px;
+    }
+
+    &-controls {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
     }
   }
 }

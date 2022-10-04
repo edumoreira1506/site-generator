@@ -71,6 +71,12 @@ export class SiteFormComponent implements OnInit {
     this.selectedComponentIndex = componentIndex;
   }
 
+  onRemoveComponent(componentIndex: number) {
+    this.site.components = this.site.components.filter(
+      (_, index) => index !== componentIndex
+    );
+  }
+
   onFinishEditComponent(
     componentIndex: number,
     newComponentMetadata: SiteComponent['metadata']
@@ -84,5 +90,12 @@ export class SiteFormComponent implements OnInit {
       };
     });
     this.selectedComponentIndex = undefined;
+  }
+
+  onMoveComponentIndex(fromIndex: number, toIndex: number) {
+    const component = this.site.components[fromIndex];
+
+    this.site.components.splice(fromIndex, 1);
+    this.site.components.splice(toIndex, 0, component);
   }
 }
