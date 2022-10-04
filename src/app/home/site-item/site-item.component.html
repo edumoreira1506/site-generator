@@ -27,6 +27,10 @@
     </div>
 
     <p class="site-item__description">{{ this.description }}</p>
+
+    <p class="site-item__last-update">
+      Última atualização: {{ this.updatedAt | date: "shortDate" }}
+    </p>
   </div>
 
   <div class="site-item__buttons">

@@ -3,6 +3,7 @@
     <app-site-item
       [colors]="site.colors"
       [title]="site.title"
+      [updatedAt]="site.updatedAt"
       [id]="site.id"
       [description]="site.description"
       (remove)="this.removeItem.emit(site.id)"
