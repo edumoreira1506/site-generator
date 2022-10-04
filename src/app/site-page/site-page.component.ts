@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Site } from '../model';
-import { SitePromiseService } from '../services/site-promise.service';
+import { SiteService } from '../services/site.service';
 
 @Component({
   selector: 'app-site-page',
   templateUrl: './site-page.component.html',
   styleUrls: ['./site-page.component.scss'],
-  providers: [SitePromiseService],
+  providers: [SiteService],
 })
 export class SitePageComponent implements OnInit {
   siteId: string = '';
@@ -15,7 +15,7 @@ export class SitePageComponent implements OnInit {
   site?: Site;
 
   constructor(
-    private sitePromiseService: SitePromiseService,
+    private SiteService: SiteService,
     private route: ActivatedRoute
   ) {}
 
@@ -23,9 +23,9 @@ export class SitePageComponent implements OnInit {
     const siteId = this.route.snapshot.params['id'];
 
     if (siteId) {
-      this.sitePromiseService.getById(siteId).then((site) => {
-        if (site) {
-          this.site = site;
+      this.SiteService.getById(siteId).subscribe((data) => {
+        if (data) {
+          this.site = data;
         }
       });
     }

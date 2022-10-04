@@ -8,13 +8,13 @@ import {
   SiteComponentIdentifier,
   SiteComponentTemplates,
 } from '../model';
-import { SitePromiseService } from '../services/site-promise.service';
+import { SiteService } from '../services/site.service';
 
 @Component({
   selector: 'app-site-form',
   templateUrl: './site-form.component.html',
   styleUrls: ['./site-form.component.scss'],
-  providers: [SitePromiseService],
+  providers: [SiteService],
 })
 export class SiteFormComponent implements OnInit {
   @ViewChild('form') form!: NgForm;
@@ -27,18 +27,15 @@ export class SiteFormComponent implements OnInit {
 
   selectedComponentIndex?: number;
 
-  constructor(
-    private siteService: SitePromiseService,
-    private router: Router
-  ) {}
+  constructor(private siteService: SiteService, private router: Router) {}
 
   ngOnInit(): void {
     this.site = new Site('', '', '');
 
     if (this.siteId) {
-      this.siteService.getById(this.siteId).then((site) => {
-        if (site) {
-          this.site = site;
+      this.siteService.getById(this.siteId).subscribe((data) => {
+        if (data) {
+          this.site = data;
         }
       });
     }
@@ -46,12 +43,12 @@ export class SiteFormComponent implements OnInit {
 
   onSubmit() {
     if (this.site.id) {
-      this.siteService.update(this.site).then(() => {
+      this.siteService.update(this.site).subscribe(() => {
         this.form.reset();
         this.router.navigate([`/${RoutePaths.MAIN}`]);
       });
     } else {
-      this.siteService.save(this.site).then(() => {
+      this.siteService.save(this.site).subscribe(() => {
         this.form.reset();
         this.router.navigate([`/${RoutePaths.MAIN}`]);
       });
