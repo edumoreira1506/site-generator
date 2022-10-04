@@ -146,6 +146,26 @@
             [site]="this.site"
           ></app-site-component>
         </div>
+
+        <div class="site-form__component-controls">
+          <i
+            *ngIf="indexOfComponent !== 0"
+            class="material-icons"
+            (click)="
+              this.onMoveComponentIndex(indexOfComponent, indexOfComponent - 1)
+            "
+            >arrow_drop_up</i
+          >
+
+          <i
+            *ngIf="indexOfComponent !== this.site.components.length - 1"
+            class="material-icons"
+            (click)="
+              this.onMoveComponentIndex(indexOfComponent, indexOfComponent + 1)
+            "
+            >arrow_drop_down</i
+          >
+        </div>
       </li>
     </ol>
   </div>

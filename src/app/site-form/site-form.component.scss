@@ -139,5 +139,11 @@
     &-preview {
       margin-top: 12px;
     }
+
+    &-controls {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+    }
   }
 }

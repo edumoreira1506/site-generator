@@ -91,4 +91,11 @@ export class SiteFormComponent implements OnInit {
     });
     this.selectedComponentIndex = undefined;
   }
+
+  onMoveComponentIndex(fromIndex: number, toIndex: number) {
+    const component = this.site.components[fromIndex];
+
+    this.site.components.splice(fromIndex, 1);
+    this.site.components.splice(toIndex, 0, component);
+  }
 }
