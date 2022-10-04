@@ -29,6 +29,8 @@ export class Site {
   id: string;
   colors: SiteColors;
   components: SiteComponent[];
+  updatedAt: Date;
+  createdAt: Date;
 
   constructor(
     title: string,
@@ -42,6 +44,8 @@ export class Site {
     },
     components: SiteComponent[] = []
   ) {
+    this.createdAt = new Date();
+    this.updatedAt = new Date();
     this.title = title;
     this.description = description;
     this.id = id;

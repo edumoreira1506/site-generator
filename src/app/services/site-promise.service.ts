@@ -45,6 +45,8 @@ export class SitePromiseService {
   }
 
   update(site: Site) {
+    site.updatedAt = new Date();
+
     return lastValueFrom(
       this.httpClient.put<Site>(
         `${this.URL}/${site.id}`,
