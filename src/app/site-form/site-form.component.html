@@ -118,6 +118,12 @@
             >edit</i
           >
 
+          <i
+            class="material-icons"
+            (click)="this.onRemoveComponent(indexOfComponent)"
+            >delete</i
+          >
+
           <select
             class="site-form__component-select"
             [(ngModel)]="this.site.components[indexOfComponent].identifier"

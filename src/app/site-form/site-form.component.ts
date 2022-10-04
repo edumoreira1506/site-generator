@@ -71,6 +71,12 @@ export class SiteFormComponent implements OnInit {
     this.selectedComponentIndex = componentIndex;
   }
 
+  onRemoveComponent(componentIndex: number) {
+    this.site.components = this.site.components.filter(
+      (_, index) => index !== componentIndex
+    );
+  }
+
   onFinishEditComponent(
     componentIndex: number,
     newComponentMetadata: SiteComponent['metadata']
